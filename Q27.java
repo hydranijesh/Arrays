@@ -1,0 +1,24 @@
+public class Q27 {
+    public static void main(String[] args) {
+
+        int[] arr = {1, 2, 2, 3, 1};
+
+        // Count frequency
+        for (int i = 0; i < arr.length; i++) {
+
+            int count = 1;
+
+            // Skip if already counted
+            if (arr[i] == -1) continue;
+
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    count++;
+                    arr[j] = -1; // mark visited
+                }
+            }
+
+            System.out.println(arr[i] + " occurs " + count + " times");
+        }
+    }
+}
